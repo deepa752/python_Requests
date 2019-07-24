@@ -31,6 +31,7 @@ def readData(fileName):
         readJson = json.load(readIt)
     return readJson
 
+# Bug here Change courses.json
 def getData(fileName,url):
     file = pathlib.Path(fileName)
     if file.exists ():
@@ -42,6 +43,7 @@ def getData(fileName,url):
 
     return jsonData
 
+#Change this to coursesJsonData and make required changes everywhere
 jsonData = getData("courses.json",BASE_URL)
 
 def getCourses(jsonData):
@@ -75,6 +77,8 @@ def getExercises(exercisesData):
 getCourses(exercisesData)
 
 printText("*"*10)
+
+# error here
 def getCourseId(exercisesData):
     userInput = input("Enter your course number :- ")
     exersisesId = (jsonData["data"][int(userInput)]["id"])
